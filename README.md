@@ -58,8 +58,8 @@ class DropzoneController extends Controller{
 <html>
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/min/dropzone.min.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 </head>
 <body>
    
@@ -71,10 +71,11 @@ class DropzoneController extends Controller{
             </form>
    
 <script type="text/javascript">
-        Dropzone.options.imageUpload = {
-            maxFilesize         :       1,
-            acceptedFiles: ".jpeg,.jpg,.png,.gif"
-        };
+        Dropzone.autoDiscover = false;
+            var dropzone = new Dropzone('#openFolderModal', {
+                maxFilesize: 10000000,
+                acceptedFiles: ".jpeg,.jpg,.png,.gif,.svg,.webp,.pdf,.mp3,.mp4,application/pdf",
+            });
 </script>
 </body>
 </html>
