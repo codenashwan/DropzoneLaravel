@@ -72,7 +72,7 @@ class DropzoneController extends Controller{
    
 <script type="text/javascript">
         Dropzone.autoDiscover = false;
-            var dropzone = new Dropzone('#openFolderModal', {
+            var dropzone = new Dropzone('#image-upload', {
                 maxFilesize: 10000000,
                 acceptedFiles: ".jpeg,.jpg,.png,.gif,.svg,.webp,.pdf,.mp3,.mp4,application/pdf",
             });
